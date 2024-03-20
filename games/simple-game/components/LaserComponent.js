@@ -11,12 +11,7 @@ class LaserComponent extends Component{
 
         let invaders = GameObject.filter("DeathGameObject")
         for(let invader of invaders){
-            if(Collisions.isCircleCircleCollision(
-                {x:invader.transform.x,y:invader.transform.y},
-                {x:this.transform.x, y:this.transform.y},
-                invader.transform.scaleX,
-                this.transform.scaleX
-                )){
+            if(Collisions.isCircleCircleCollision({x:invader.transform.x,y:invader.transform.y},{x:this.transform.x, y:this.transform.y},invader.transform.scaleX,this.transform.scaleX)){
                     // GameObject.destroy(invader);
                     // Globals.score++;
                     let event = {

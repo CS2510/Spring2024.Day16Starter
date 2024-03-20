@@ -29,13 +29,13 @@ class Engine {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    Engine.currentScene.start(ctx);
+    Engine.currentScene._start(ctx);
 
     // Update the current scene
     Engine.currentScene.update(ctx)
 
     //Remove anything marked for destroy
-    Engine.currentScene.gameObjects = Engine.currentScene.gameObjects.filter(go=>go.markForDestroy == false);
+    Engine.currentScene.gameObjects = Engine.currentScene.gameObjects.filter(go => go.markForDestroy == false);
 
     //Draw in world space
     Engine.currentScene.draw(ctx)

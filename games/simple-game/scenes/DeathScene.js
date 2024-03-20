@@ -5,11 +5,13 @@ import "../components/EndSceneCounterComponent.js"
 class DeathScene extends Scene {
   constructor() {
       super("black")
+  }
+  start(ctx){
       
       let scoreGameObject = new GameObject()
       scoreGameObject.addComponent(new Text("Score: ", "30px sans", "white"))
       scoreGameObject.addComponent(new ScoreReaderComponent())
-      this.gameObjects.push(scoreGameObject)
+      GameObject.instantiate(scoreGameObject)
       scoreGameObject.transform.x = 30;
       scoreGameObject.transform.y = 30;
 
@@ -17,11 +19,11 @@ class DeathScene extends Scene {
       deathTextGameObject.transform.x = 30
       deathTextGameObject.transform.y = 60
       deathTextGameObject.addComponent(new Text("You Died", "30px sans", "red"))
-      this.gameObjects.push(deathTextGameObject)
+      GameObject.instantiate(deathTextGameObject)
 
       let endSceneGameObject = new GameObject("EndSceneCounterGameObject")
       endSceneGameObject.addComponent(new EndSceneCounterComponent())
-      this.gameObjects.push(endSceneGameObject)
+      GameObject.instantiate(endSceneGameObject)
   }
 }
 

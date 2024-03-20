@@ -6,6 +6,8 @@ import CheckCollisionsComponentRectangle_Rectangle from "./CheckCollisionsCompon
 class RectangleScene extends Scene {
   constructor() {
     super("purple")
+  }
+  start(ctx){
 
     //A circle against which we will do collision detection.
     let collisionCircleGameObject = new GameObject("CollisionCircleGameObject")
@@ -14,7 +16,7 @@ class RectangleScene extends Scene {
     collisionCircleGameObject.transform.x = 100;
     collisionCircleGameObject.transform.y = 100;
     collisionCircleGameObject.transform.scaleX = 50
-    this.gameObjects.push(collisionCircleGameObject);
+    GameObject.instantiate(collisionCircleGameObject);
 
 
     //A rectangle against which we will do collision detection
@@ -25,7 +27,7 @@ class RectangleScene extends Scene {
     collisionRectangleGameObject.transform.y = 200;
     collisionRectangleGameObject.transform.scaleX = 20
     collisionRectangleGameObject.transform.scaleY = 30;
-    this.gameObjects.push(collisionRectangleGameObject);
+    GameObject.instantiate(collisionRectangleGameObject);
 
 
     // A infinitely small point that will follow the mouse cursor
@@ -34,7 +36,7 @@ class RectangleScene extends Scene {
     mouseCursorGameObject.addComponent(new FollowMouseComponent())
     mouseCursorGameObject.transform.scaleX = 30;
     mouseCursorGameObject.transform.scaleY = 30;
-    this.gameObjects.push(mouseCursorGameObject)
+    GameObject.instantiate(mouseCursorGameObject)
   }
 
 }
