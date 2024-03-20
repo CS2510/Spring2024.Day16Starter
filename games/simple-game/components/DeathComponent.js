@@ -8,7 +8,7 @@ class DeathComponent extends Component {
 
     handleEvent(event) {
         console.log(event);
-        if (event.dest == this) {
+        if (event.dest == this.parent) {
             if (event.name == "laserCollision") {
                 GameObject.destroy(this.parent);
             }
