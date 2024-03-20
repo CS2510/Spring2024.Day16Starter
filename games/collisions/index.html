@@ -17,11 +17,11 @@
 
     <script type="module">
         import "/engine/Engine.js"
-        import "./CircleScene.js"
-        import "./RectangleScene.js"
+        import "./scenes/CircleScene.js"
+        import "./scenes/RectangleScene.js"
 
-        Engine.currentScene = new CircleScene();
-        // Engine.currentScene = new RectangleScene();
+        // Engine.currentScene = new CircleScene();
+        Engine.currentScene = new RectangleScene();
 
         Engine.setup()
     </script>
